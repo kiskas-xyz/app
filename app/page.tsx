@@ -1,97 +1,164 @@
-'use client'
-import React, { useState } from 'react';
+'use client';
 
-const domains = [
-  {
-    name: 'example.com',
-    status: 'active',
-    aliases: [
-      { local: '*', forwardTo: 'user@gmail.com' },
-      { local: 'support', forwardTo: 'user@gmail.com' },
-      { local: 'hello', forwardTo: 'user@gmail.com' },
-    ],
-  },
-];
+import { useEffect, useState } from 'react';
 
-export default function CustomEmailDashboard() {
-  const [newAlias, setNewAlias] = useState('');
+export default function Home() {
+  const [isHeaderVisible, setIsHeaderVisible] = useState(true);
+  useEffect(() => {
+    let lastScroll = window.scrollY;
+    const handleScroll = () => {
+      const currentScroll = window.scrollY;
+      setIsHeaderVisible(currentScroll < lastScroll || currentScroll < 100);
+      lastScroll = currentScroll;
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <div className="flex min-h-screen bg-gray-50">
-      {/* Sidebar */}
-      <aside className="w-64 bg-white shadow-md p-4">
-        <div className="text-xl font-bold mb-6">📬 Your Mail</div>
-        <ul className="space-y-2">
-          <li className="text-blue-600 font-medium">Dashboard</li>
-          <li className="text-gray-700">Billing</li>
-          <li className="text-gray-700">API Access</li>
-          <li className="text-gray-700">Help</li>
-        </ul>
-        <div className="mt-10 text-xs text-gray-400">Logged in as user@gmail.com</div>
-      </aside>
+    <main className="min-h-screen bg-white text-gray-900 font-sans">
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-transform duration-300 bg-white shadow-sm border-b flex justify-between items-center px-8 py-6 ${isHeaderVisible ? '' : '-translate-y-full'}`}>
+        <h1 className="text-3xl font-bold tracking-tight">Kiskas</h1>
+        <nav className="space-x-6 text-sm font-medium text-gray-600">
+          <a href="#features" className="hover:text-black transition">Features</a>
+          <a href="#pricing" className="hover:text-black transition">Pricing</a>
+          <a href="#how" className="hover:text-black transition">How It Works</a>
+          <a href="#contact" className="hover:text-black transition">Contact</a>
+        </nav>
+      </header>
 
-      {/* Main Panel */}
-      <main className="flex-1 p-8">
-        <div className="text-2xl font-semibold mb-6">Domains</div>
+      <section className="relative text-center py-44 px-6 bg-gradient-to-b from-gray-50 via-white to-gray-50 overflow-hidden">
+  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(0,0,0,0.03)_0%,_transparent_70%)] pointer-events-none"></div>
+  <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12 relative z-10">
+    <div className="md:w-1/2 text-left">
+      <h2 className="text-5xl font-extrabold mb-6 leading-tight">Simplify Custom Email Setup</h2>
+      <p className="text-lg mb-4 text-gray-700">Kiskas is a done-for-you service for custom domain emails. We handle all the setup so you don't have to.</p>
+      <p className="text-md text-gray-500 mb-8">Google Workspace charges £60 per user per year. Kiskas gives you 10 custom emails for just £15 a year. No catch.</p>
+      <a href="#contact" className="inline-block bg-black text-white px-8 py-4 rounded-full text-sm font-semibold shadow-md hover:bg-gray-900 transition">
+        Get Started
+      </a>
+    </div>
+    <div className="md:w-1/2 flex justify-center">
+      <svg className="w-full max-w-sm" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="200" rx="16" fill="#f9fafb"/>
+  <path d="M50 70h100v60H50z" fill="#e5e7eb"/>
+  <path d="M50 70l50 35 50-35" stroke="#d1d5db" strokeWidth="2" fill="none"/>
+  <path d="M75 115h50v5H75z" fill="#d1d5db"/>
+  <circle cx="100" cy="100" r="85" stroke="#e5e7eb" strokeWidth="4" />
+</svg>
+    </div>
+  </div>
+</section>
 
-        {domains.map((domain, index) => (
-          <div key={index} className="bg-white shadow rounded-xl p-6 mb-6">
-            <div className="flex justify-between items-center mb-4">
-              <h3 className="text-lg font-semibold">{domain.name}</h3>
-              <span className="text-sm text-green-600">● Email routing active</span>
-            </div>
+      <section id="features" className="py-44 px-6 bg-white text-center">
+  <h3 className="text-3xl font-bold mb-16">Why Choose Kiskas?</h3>
+  <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+    <div className="p-6 bg-gray-50 rounded-xl shadow-md hover:shadow-lg transition">
+      <div className="text-4xl mb-4">🛠️</div>
+      <h4 className="text-xl font-semibold mb-2">We Handle Setup</h4>
+      <p className="text-gray-600">No DNS or email headaches. We configure everything for you, manually and correctly.</p>
+    </div>
+    <div className="p-6 bg-gray-50 rounded-xl shadow-md hover:shadow-lg transition">
+      <div className="text-4xl mb-4">💰</div>
+      <h4 className="text-xl font-semibold mb-2">Affordable Pricing</h4>
+      <p className="text-gray-600">Start from just £15/year — up to 75% cheaper than Google Workspace for similar results.</p>
+    </div>
+    <div className="p-6 bg-gray-50 rounded-xl shadow-md hover:shadow-lg transition">
+      <div className="text-4xl mb-4">💬</div>
+      <h4 className="text-xl font-semibold mb-2">24/7 Support</h4>
+      <p className="text-gray-600">We’re always available to help, no matter your time zone or technical level.</p>
+    </div>
+  </div>
+</section>
 
-            <table className="w-full mb-4 text-sm">
-              <thead className="text-left text-gray-500">
-                <tr>
-                  <th className="pb-2">Email</th>
-                  <th className="pb-2">Forwards to</th>
-                  <th className="pb-2">Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                {domain.aliases.map((alias, i) => (
-                  <tr key={i} className="border-t">
-                    <td className="py-2">{alias.local}@{domain.name}</td>
-                    <td className="py-2">{alias.forwardTo}</td>
-                    <td className="py-2">
-                      <button className="text-sm text-blue-600 mr-2">Test</button>
-                      <button className="text-sm text-red-500">Remove</button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+      <section id="how" className="py-44 px-6 bg-gray-50 text-center">
+  <h3 className="text-3xl font-bold mb-16">How It Works</h3>
+  <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-10 text-left">
+    <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+      <div className="text-2xl font-bold mb-2">1. Contact Us</div>
+      <p className="text-gray-700">Send us your domain and preferred emails via your company email or form (Stripe integration coming soon).</p>
+    </div>
+    <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+      <div className="text-2xl font-bold mb-2">2. Payment</div>
+      <p className="text-gray-700">Make your payment and get an instant booking link for a live setup call.</p>
+    </div>
+    <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+      <div className="text-2xl font-bold mb-2">3. Live Setup</div>
+      <p className="text-gray-700">Join the call and we’ll configure everything in under 10 minutes — free of charge.</p>
+    </div>
+    <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+      <div className="text-2xl font-bold mb-2">Self-Setup Option</div>
+      <p className="text-gray-700">Prefer DIY? Download our PDF guide and follow step-by-step instructions.</p>
+    </div>
+  </div>
+</section>
 
-            <div className="flex items-center gap-2">
-              <input
-                type="text"
-                placeholder="new-alias"
-                value={newAlias}
-                onChange={(e) => setNewAlias(e.target.value)}
-                className="border rounded px-3 py-2 text-sm w-64"
-              />
-              <button className="bg-green-500 text-white text-sm px-4 py-2 rounded">
-                Add
-              </button>
-            </div>
+      <section id="pricing" className="py-44 px-6 bg-white text-center">
+        <h3 className="text-3xl font-bold mb-10">Simple, Transparent Pricing</h3>
+        <p className="mb-14 text-gray-500 max-w-xl mx-auto">No hidden fees. No upsells. Just clean, manual setup at unbeatable prices.</p>
+        <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-8 text-left">
+          <div className="border rounded-2xl p-8 shadow-sm">
+            <h4 className="text-xl font-semibold mb-2">Starter</h4>
+            <p className="text-2xl font-bold mb-4">£15/year</p>
+            <ul className="mb-4 space-y-2 text-sm text-gray-600">
+              <li>1 Domain</li>
+              <li>Up to 10 Emails</li>
+              <li>Manual DNS Setup</li>
+              <li>Email Routing</li>
+              <li>24/7 Support</li>
+            </ul>
           </div>
-        ))}
-
-        <div className="bg-white shadow rounded-xl p-6">
-          <h3 className="text-lg font-semibold mb-2">Add a new domain</h3>
-          <div className="flex gap-2">
-            <input
-              type="text"
-              placeholder="yourdomain.com"
-              className="border rounded px-3 py-2 text-sm w-64"
-            />
-            <button className="bg-green-500 text-white text-sm px-4 py-2 rounded">
-              Add Domain
-            </button>
+          <div className="border rounded-2xl p-8 shadow-md bg-gray-50 relative">
+            <span className="absolute top-4 right-4 bg-black text-white text-xs px-3 py-1 rounded-full">Most Popular</span>
+            <h4 className="text-xl font-semibold mb-2">Pro</h4>
+            <p className="text-2xl font-bold mb-4">£39/year</p>
+            <ul className="mb-4 space-y-2 text-sm text-gray-600">
+              <li>Up to 3 Domains</li>
+              <li>Up to 25 Emails</li>
+              <li>Guided DNS or Nameserver Setup</li>
+              <li>Email Routing</li>
+              <li>24/7 Support</li>
+            </ul>
+          </div>
+          <div className="border rounded-2xl p-8 shadow-sm">
+            <h4 className="text-xl font-semibold mb-2">Business</h4>
+            <p className="text-2xl font-bold mb-4">£79/year</p>
+            <ul className="mb-4 space-y-2 text-sm text-gray-600">
+              <li>Up to 10 Domains</li>
+              <li>Up to 100 Emails</li>
+              <li>Full Setup & Management</li>
+              <li>Priority Support</li>
+              <li>24/7 Support</li>
+            </ul>
+          </div>
+          <div className="border rounded-2xl p-8 shadow-sm bg-gray-100">
+            <h4 className="text-xl font-semibold mb-2">Enterprise</h4>
+            <p className="text-2xl font-bold mb-4">Contact Us</p>
+            <ul className="mb-4 space-y-2 text-sm text-gray-600">
+              <li>Unlimited Domains</li>
+              <li>Unlimited Emails</li>
+              <li>Dedicated Account Manager</li>
+              <li>Custom API & Automation</li>
+              <li>24/7 Priority Support</li>
+            </ul>
           </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      <section id="contact" className="relative py-44 px-6 bg-gray-100 text-center overflow-hidden">
+  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(0,0,0,0.03)_0%,_transparent_70%)] pointer-events-none"></div>
+  <div className="relative z-10">
+        <h3 className="text-3xl font-bold mb-10">Let’s Get You Set Up</h3>
+        <p className="mb-8 text-gray-600">Ready to start or have questions? Reach out and we’ll handle the rest.</p>
+        <a href="mailto:hello@kiskas.xyz" className="bg-black text-white px-8 py-4 rounded-full text-sm font-semibold shadow-md hover:bg-gray-900 transition">
+          Contact Us
+        </a>
+        </div>
+</section>
+
+<footer className="py-6 text-center text-sm text-gray-400">
+        &copy; {new Date().getFullYear()} Kiskas. A product of DAS Technology Limited. All rights reserved.
+      </footer>
+    </main>
   );
 }
