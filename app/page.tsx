@@ -76,31 +76,32 @@ export default function Home() {
       <section id="savings" className="py-44 px-6 bg-gray-50 text-center">
         <h3 className="text-3xl font-bold mb-10">Why Pay More?</h3>
         <p className="mb-10 text-gray-600 max-w-3xl mx-auto text-lg">
-          Most platforms charge <strong>per user</strong> — costing £30 to £70+ yearly for a single email. With Kiskas, you pay <strong>as low as £1.56 per email</strong> annually.
+          {"Most platforms charge per user — costing £30 to £70+ yearly for a single email. With Kiskas, you get up to 25 emails for just £70/year, and even more with Business or Enterprise."}
         </p>
         <div className="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto text-left">
           <div className="bg-white p-6 rounded-xl shadow">
             <h4 className="text-xl font-semibold mb-2">Kiskas Pro</h4>
-            <p className="text-3xl font-bold text-green-600">£39/year</p>
-            <p className="text-sm text-gray-500">25 emails, 3 domains → £1.56/email</p>
+            <p className="text-3xl font-bold text-green-600">£70/year</p>
+            <p className="text-sm text-gray-500">3 domains, 25 emails → £2.80/email</p>
           </div>
           <div className="bg-white p-6 rounded-xl shadow">
             <h4 className="text-xl font-semibold mb-2">Google Workspace</h4>
             <p className="text-3xl font-bold text-red-600">£57/year</p>
-            <p className="text-sm text-gray-500">Per user/email → 26× more</p>
+            <p className="text-sm text-gray-500">Per user/email → 20× more</p>
           </div>
           <div className="bg-white p-6 rounded-xl shadow">
             <h4 className="text-xl font-semibold mb-2">Zoho Mail Premium</h4>
             <p className="text-3xl font-bold text-red-600">£38/year</p>
-            <p className="text-sm text-gray-500">Per user/email → 24× more</p>
+            <p className="text-sm text-gray-500">Per user/email → 13× more</p>
           </div>
           <div className="bg-white p-6 rounded-xl shadow">
             <h4 className="text-xl font-semibold mb-2">Namecheap Pro</h4>
             <p className="text-3xl font-bold text-red-600">£33/year</p>
-            <p className="text-sm text-gray-500">Per user/email → 21× more</p>
+            <p className="text-sm text-gray-500">Per user/email → 12× more</p>
           </div>
         </div>
       </section>
+
 
       <section id="how" className="py-44 px-6 bg-gray-50 text-center">
         <h3 className="text-3xl font-bold mb-16">How It Works</h3>
