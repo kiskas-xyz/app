@@ -74,33 +74,34 @@ export default function Home() {
       </section>
 
       <section id="savings" className="py-44 px-6 bg-gray-50 text-center">
-        <h3 className="text-3xl font-bold mb-10">Why Pay More for the Same Email?</h3>
+        <h3 className="text-3xl font-bold mb-10">Cost Comparison for 10 Email Addresses</h3>
         <p className="mb-10 text-gray-600 max-w-3xl mx-auto text-lg">
-          {"  Most email platforms charge you **per user** — which means you're paying £30–£70 every year just to send and receive email on your domain. Kiskas gives you way more, for way less."}
+          Want 10 emails on your domain? Here's what you'll pay per year with each provider:
         </p>
         <div className="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto text-left">
-          <div className="bg-white p-6 rounded-xl shadow">
-            <h4 className="text-xl font-semibold mb-2">Kiskas Pro</h4>
-            <p className="text-3xl font-bold text-green-600">£70/year</p>
-            <p className="text-sm text-gray-500">Includes 25 emails, 3 domains — no per-user fees</p>
+          <div className="bg-white p-6 rounded-xl shadow border-2 border-green-500">
+            <h4 className="text-xl font-semibold mb-2">Kiskas</h4>
+            <p className="text-3xl font-bold text-green-600">£30/year</p>
+            <p className="text-sm text-gray-500">10 emails included — no extra charges</p>
           </div>
           <div className="bg-white p-6 rounded-xl shadow">
             <h4 className="text-xl font-semibold mb-2">Google Workspace</h4>
-            <p className="text-3xl font-bold text-red-600">£57/year</p>
-            <p className="text-sm text-gray-500">Per user — pay more as your team grows</p>
+            <p className="text-3xl font-bold text-red-600">£570/year</p>
+            <p className="text-sm text-gray-500">£57 × 10 users</p>
           </div>
           <div className="bg-white p-6 rounded-xl shadow">
             <h4 className="text-xl font-semibold mb-2">Zoho Mail Premium</h4>
-            <p className="text-3xl font-bold text-red-600">£38/year</p>
-            <p className="text-sm text-gray-500">Per user — only 1 email per license</p>
+            <p className="text-3xl font-bold text-red-600">£380/year</p>
+            <p className="text-sm text-gray-500">£38 × 10 users</p>
           </div>
           <div className="bg-white p-6 rounded-xl shadow">
             <h4 className="text-xl font-semibold mb-2">Namecheap Pro</h4>
-            <p className="text-3xl font-bold text-red-600">£33/year</p>
-            <p className="text-sm text-gray-500">Per mailbox — limited routing & setup help</p>
+            <p className="text-3xl font-bold text-red-600">£330/year</p>
+            <p className="text-sm text-gray-500">£33 × 10 mailboxes</p>
           </div>
         </div>
       </section>
+
 
 
 
