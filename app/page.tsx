@@ -68,7 +68,7 @@ export default function Home() {
           <div className="p-6 bg-gray-50 rounded-xl shadow-md hover:shadow-lg transition">
             <div className="text-4xl mb-4">💬</div>
             <h4 className="text-xl font-semibold mb-2">24/7 Support</h4>
-            <p className="text-gray-600">We’re always available to help, no matter your time zone or technical level.</p>
+            <p className="text-gray-600">{"We’re always available to help, no matter your time zone or technical level."}</p>
           </div>
         </div>
       </section>
@@ -118,7 +118,7 @@ export default function Home() {
           </div>
           <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
             <div className="text-2xl font-bold mb-2">3. Live Setup</div>
-            <p className="text-gray-700">Join the call and we’ll configure everything in under 10 minutes — free of charge.</p>
+            <p className="text-gray-700">{"Join the call and we’ll configure everything in under 10 minutes — free of charge."}</p>
           </div>
           <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
             <div className="text-2xl font-bold mb-2">Self-Setup Option</div>
@@ -204,8 +204,8 @@ export default function Home() {
       <section id="contact" className="relative py-44 px-6 bg-gray-100 text-center overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(0,0,0,0.03)_0%,_transparent_70%)] pointer-events-none"></div>
         <div className="relative z-10">
-          <h3 className="text-3xl font-bold mb-10">Let’s Get You Set Up</h3>
-          <p className="mb-8 text-gray-600">Ready to start or have questions? Reach out and we’ll handle the rest.</p>
+          <h3 className="text-3xl font-bold mb-10">{"Let’s Get You Set Up"}</h3>
+          <p className="mb-8 text-gray-600">{"Ready to start or have questions? Reach out and we’ll handle the rest."}</p>
           <a href="mailto:hello@kiskas.xyz" className="bg-black text-white px-8 py-4 rounded-full text-sm font-semibold shadow-md hover:bg-gray-900 transition">
             Contact Us
           </a>
