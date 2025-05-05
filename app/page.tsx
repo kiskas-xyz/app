@@ -71,7 +71,36 @@ export default function Home() {
   </div>
 </section>
 
-      <section id="how" className="py-44 px-6 bg-gray-50 text-center">
+<section id="savings" className="py-44 px-6 bg-gray-50 text-center">
+  <h3 className="text-3xl font-bold mb-10">Why Pay More?</h3>
+  <p className="mb-10 text-gray-600 max-w-3xl mx-auto text-lg">
+    Most platforms charge <strong>per user</strong> — costing £30 to £70+ yearly for a single email. With Kiskas, you pay <strong>as low as £1.56 per email</strong> annually.
+  </p>
+  <div className="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto text-left">
+    <div className="bg-white p-6 rounded-xl shadow">
+      <h4 className="text-xl font-semibold mb-2">Kiskas Pro</h4>
+      <p className="text-3xl font-bold text-green-600">£39/year</p>
+      <p className="text-sm text-gray-500">25 emails, 3 domains → £1.56/email</p>
+    </div>
+    <div className="bg-white p-6 rounded-xl shadow">
+      <h4 className="text-xl font-semibold mb-2">Google Workspace</h4>
+      <p className="text-3xl font-bold text-red-600">£57/year</p>
+      <p className="text-sm text-gray-500">Per user/email → 26× more</p>
+    </div>
+    <div className="bg-white p-6 rounded-xl shadow">
+      <h4 className="text-xl font-semibold mb-2">Zoho Mail Premium</h4>
+      <p className="text-3xl font-bold text-red-600">£38/year</p>
+      <p className="text-sm text-gray-500">Per user/email → 24× more</p>
+    </div>
+    <div className="bg-white p-6 rounded-xl shadow">
+      <h4 className="text-xl font-semibold mb-2">Namecheap Pro</h4>
+      <p className="text-3xl font-bold text-red-600">£33/year</p>
+      <p className="text-sm text-gray-500">Per user/email → 21× more</p>
+    </div>
+  </div>
+</section>
+
+<section id="how" className="py-44 px-6 bg-gray-50 text-center">
   <h3 className="text-3xl font-bold mb-16">How It Works</h3>
   <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-10 text-left">
     <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
@@ -94,58 +123,80 @@ export default function Home() {
 </section>
 
       <section id="pricing" className="py-44 px-6 bg-white text-center">
-        <h3 className="text-3xl font-bold mb-10">Simple, Transparent Pricing</h3>
-        <p className="mb-14 text-gray-500 max-w-xl mx-auto">No hidden fees. No upsells. Just clean, manual setup at unbeatable prices.</p>
-        <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-8 text-left">
-          <div className="border rounded-2xl p-8 shadow-sm">
-            <h4 className="text-xl font-semibold mb-2">Starter</h4>
-            <p className="text-2xl font-bold mb-4">£15/year</p>
-            <ul className="mb-4 space-y-2 text-sm text-gray-600">
-              <li>1 Domain</li>
-              <li>Up to 10 Emails</li>
-              <li>Manual DNS Setup</li>
-              <li>Email Routing</li>
-              <li>24/7 Support</li>
-            </ul>
-          </div>
-          <div className="border rounded-2xl p-8 shadow-md bg-gray-50 relative">
-            <span className="absolute top-4 right-4 bg-black text-white text-xs px-3 py-1 rounded-full">Most Popular</span>
-            <h4 className="text-xl font-semibold mb-2">Pro</h4>
-            <p className="text-2xl font-bold mb-4">£39/year</p>
-            <ul className="mb-4 space-y-2 text-sm text-gray-600">
-              <li>Up to 3 Domains</li>
-              <li>Up to 25 Emails</li>
-              <li>Guided DNS or Nameserver Setup</li>
-              <li>Email Routing</li>
-              <li>24/7 Support</li>
-            </ul>
-          </div>
-          <div className="border rounded-2xl p-8 shadow-sm">
-            <h4 className="text-xl font-semibold mb-2">Business</h4>
-            <p className="text-2xl font-bold mb-4">£79/year</p>
-            <ul className="mb-4 space-y-2 text-sm text-gray-600">
-              <li>Up to 10 Domains</li>
-              <li>Up to 100 Emails</li>
-              <li>Full Setup & Management</li>
-              <li>Priority Support</li>
-              <li>24/7 Support</li>
-            </ul>
-          </div>
-          <div className="border rounded-2xl p-8 shadow-sm bg-gray-100">
-            <h4 className="text-xl font-semibold mb-2">Enterprise</h4>
-            <p className="text-2xl font-bold mb-4">Contact Us</p>
-            <ul className="mb-4 space-y-2 text-sm text-gray-600">
-              <li>Unlimited Domains</li>
-              <li>Unlimited Emails</li>
-              <li>Dedicated Account Manager</li>
-              <li>Custom API & Automation</li>
-              <li>24/7 Priority Support</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+  <h3 className="text-3xl font-bold mb-10">Simple, Transparent Pricing</h3>
+  <p className="mb-14 text-gray-500 max-w-xl mx-auto">Choose a plan that works for you — monthly flexibility or yearly savings.</p>
+  <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-8 text-left">
+    <div className="border rounded-2xl p-8 shadow-sm">
+      <h4 className="text-xl font-semibold mb-2">Starter</h4>
+      <p className="text-2xl font-bold mb-1">£3/mo</p>
+      <p className="text-sm text-gray-500 mb-4">or £30/year</p>
+      <ul className="mb-4 space-y-2 text-sm text-gray-600">
+        <li>1 Domain</li>
+        <li>Up to 10 Emails</li>
+        <li>Manual DNS Setup</li>
+        <li>Email Routing</li>
+        <li>24/7 Support</li>
+      </ul>
+    </div>
+    <div className="border rounded-2xl p-8 shadow-md bg-gray-50 relative">
+      <span className="absolute top-4 right-4 bg-black text-white text-xs px-3 py-1 rounded-full">Most Popular</span>
+      <h4 className="text-xl font-semibold mb-2">Pro</h4>
+      <p className="text-2xl font-bold mb-1">£7/mo</p>
+      <p className="text-sm text-gray-500 mb-4">or £70/year</p>
+      <ul className="mb-4 space-y-2 text-sm text-gray-600">
+        <li>Up to 3 Domains</li>
+        <li>Up to 25 Emails</li>
+        <li>Guided DNS or Nameserver Setup</li>
+        <li>Email Routing</li>
+        <li>24/7 Support</li>
+      </ul>
+    </div>
+    <div className="border rounded-2xl p-8 shadow-sm">
+      <h4 className="text-xl font-semibold mb-2">Business</h4>
+      <p className="text-2xl font-bold mb-1">£15/mo</p>
+      <p className="text-sm text-gray-500 mb-4">or £150/year</p>
+      <ul className="mb-4 space-y-2 text-sm text-gray-600">
+        <li>Up to 10 Domains</li>
+        <li>Up to 100 Emails</li>
+        <li>Full Setup & Management</li>
+        <li>Priority Support</li>
+        <li>24/7 Support</li>
+      </ul>
+    </div>
+    <div className="border rounded-2xl p-8 shadow-sm bg-gray-100">
+      <h4 className="text-xl font-semibold mb-2">Enterprise</h4>
+      <p className="text-2xl font-bold mb-1">Custom</p>
+      <p className="text-sm text-gray-500 mb-4">Billed annually or quarterly</p>
+      <ul className="mb-4 space-y-2 text-sm text-gray-600">
+        <li>Unlimited Domains</li>
+        <li>Unlimited Emails</li>
+        <li>Dedicated Account Manager</li>
+        <li>Custom API & Automation</li>
+        <li>24/7 Priority Support</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-      <section id="contact" className="relative py-44 px-6 bg-gray-100 text-center overflow-hidden">
+<section id="testimonials" className="py-44 px-6 bg-white text-center">
+  <h3 className="text-3xl font-bold mb-10">Trusted By Real Users</h3>
+  <div className="max-w-4xl mx-auto grid md:grid-cols-3 gap-8 text-left">
+    <div className="bg-gray-50 p-6 rounded-xl shadow">
+      <p className="text-gray-700 italic mb-4">“Working with Kiskas through Dastech has been a breeze. Fast, reliable and cost-effective.”</p>
+      <h4 className="text-sm font-semibold">dastech.org.uk</h4>
+    </div>
+    <div className="bg-gray-50 p-6 rounded-xl shadow">
+      <p className="text-gray-700 italic mb-4">“Kiskas helped us set up email routing for our restaurant clients. Super support!”</p>
+      <h4 className="text-sm font-semibold">myqrmenu.co</h4>
+    </div>
+    <div className="bg-gray-50 p-6 rounded-xl shadow">
+      <p className="text-gray-700 italic mb-4">“A great solution for dev communities. Kiskas made custom email simple.”</p>
+      <h4 className="text-sm font-semibold">React Native Nigeria</h4>
+    </div>
+  </div>
+</section>
+
+<section id="contact" className="relative py-44 px-6 bg-gray-100 text-center overflow-hidden">
   <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(0,0,0,0.03)_0%,_transparent_70%)] pointer-events-none"></div>
   <div className="relative z-10">
         <h3 className="text-3xl font-bold mb-10">Let’s Get You Set Up</h3>
