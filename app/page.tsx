@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 
 export default function Home() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
   useEffect(() => {
     let lastScroll = window.scrollY;
@@ -15,17 +16,57 @@ export default function Home() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+
+
+  const toggleMenu = () => {
+    setIsMobileMenuOpen(prev => !prev);
+  };
   return (
     <main className="min-h-screen bg-white text-gray-900 font-sans">
-      <header className={`fixed top-0 left-0 right-0 z-50 transition-transform duration-300 bg-white shadow-sm border-b flex justify-between items-center px-8 py-6 ${isHeaderVisible ? '' : '-translate-y-full'}`}>
-        <h1 className="text-3xl font-bold tracking-tight">Kiskas</h1>
-        <nav className="space-x-6 text-sm font-medium text-gray-600">
-          <a href="#features" className="hover:text-black transition">Features</a>
-          <a href="#pricing" className="hover:text-black transition">Pricing</a>
-          <a href="#how" className="hover:text-black transition">How It Works</a>
-          <a href="#contact" className="hover:text-black transition">Contact</a>
-        </nav>
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-transform duration-300 bg-white shadow-sm border-b px-6 py-4 ${isHeaderVisible ? '' : '-translate-y-full'}`}>
+        <div className="flex justify-between items-center">
+          <h1 className="text-2xl font-bold tracking-tight">Kiskas</h1>
+
+          {/* Mobile menu toggle */}
+          <div className="md:hidden">
+            <button onClick={toggleMenu} aria-label="Toggle Menu">
+              <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+
+          {/* Desktop nav */}
+          <nav className="hidden md:flex space-x-6 text-sm font-medium text-gray-600">
+            <a href="#features" className="hover:text-black transition">Features</a>
+            <a href="#pricing" className="hover:text-black transition">Pricing</a>
+            <a href="#how" className="hover:text-black transition">How It Works</a>
+            <a href="#contact" className="hover:text-black transition">Contact</a>
+          </nav>
+        </div>
+
+        {/* Mobile nav */}
+        {isMobileMenuOpen && (
+          <div className="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center space-y-6 text-lg font-medium text-gray-800 md:hidden">
+            <button
+              onClick={toggleMenu}
+              aria-label="Close Menu"
+              className="absolute top-5 right-5 text-gray-700"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+
+            <a href="#features" onClick={toggleMenu} className="hover:text-black transition">Features</a>
+            <a href="#pricing" onClick={toggleMenu} className="hover:text-black transition">Pricing</a>
+            <a href="#how" onClick={toggleMenu} className="hover:text-black transition">How It Works</a>
+            <a href="#contact" onClick={toggleMenu} className="hover:text-black transition">Contact</a>
+          </div>
+        )}
+
       </header>
+
 
       <section className="relative text-center py-44 px-6 bg-gradient-to-b from-gray-50 via-white to-gray-50 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(0,0,0,0.03)_0%,_transparent_70%)] pointer-events-none"></div>
