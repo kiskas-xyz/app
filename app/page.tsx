@@ -13,7 +13,6 @@ export default function Home() {
       <div className="px-8">
         <HeroSection />
         <HowItWorks />
-
         <Comparison />
       </div>
 
